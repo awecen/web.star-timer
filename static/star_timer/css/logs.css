@@ -1,0 +1,302 @@
+/* 統計表示パターン選択ブロック */
+.display-pattern{
+    margin: 8px 0;
+}
+
+.display-pattern div{
+}
+
+/* タブコンポーネント*/
+.display-pattern div .tabs{
+    border-bottom: 1px #e8e8e8 solid;
+}
+
+/* リスト形式 */
+.list-info{
+    color: #333333;
+    margin: 8px 0px;
+}
+/* 統計形式 */
+#statistic .average{
+    display: flex;
+    flex-direction: column;
+}
+
+#statistic .average div{
+    display: flex;
+}
+#statistic .average .title{
+    border-bottom: 1px #cccccc solid;
+    margin: 8px 0;
+}
+#statistic .average div .label{
+    line-height: 0;
+    margin-right: 8px;
+    padding: 10px;
+}
+
+#statistic .average .worn{
+    margin: 8px 0;
+}
+
+#statistic .average .none{
+    margin: 8px 0;
+}
+
+/*グラフ形式*/
+.graph-contents{
+    height: 496px;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px #e8e8e8 solid; */
+    padding: 8px;
+    /* border-radius: 8px; */
+    margin: 16px 0;
+    padding: 16px;
+}
+#graph .date-picker{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #E8E8FF;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+#graph .date-picker .btn-before{
+    display: flex;
+    width: 64px;
+    padding-left: 6px;
+    height: 72px;
+    align-items: center;
+}
+
+#graph .date-picker .btn-next{
+    display: flex;
+    width: 64px;
+    padding-left: 6px;
+    height: 72px;
+    align-items: center;
+}
+
+#graph .date-picker .label-date{
+    margin: 8px 0 0 0;
+    font-size: 16px;
+}
+
+#graph .date-picker .label-date .target-date{
+    font-weight: bold;
+}
+
+#graph .date-picker .label-date .total .worn{
+    display: flex;
+}
+
+#graph .date-picker .label-date .total .none{
+    display: flex;
+}
+
+#graph .date-picker .label-date .total .worn .timer{
+    padding-top: 2px;
+
+}
+
+#graph .date-picker .label-date .total .none .timer{
+    padding-top: 2px;
+}
+
+.total-hours.timer{
+    padding-left: 4px;
+}
+
+#graph .graph-contents .axis-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+}
+
+#graph .graph-contents .axis-time div{
+    text-align: right;
+}
+
+#graph .graph-contents .axis-time .th2{
+    font-size: 8px;
+}
+
+#graph .axis-graph{
+    margin: 0 8px;
+    padding: 8px 0;
+    height: inherit;
+}
+
+#graph .axis-graph .cover{
+    background-color: #cccccc;
+    width: 80px;
+    border-radius: 2px;
+    margin: 0;
+    position: absolute;
+    top: 796px;
+    height: 0px;
+}
+#graph .axis-graph .cover.covered{
+    /*top: 316px;*/
+    /*height: 480px;*/
+    top:320px;
+    height: 480px;
+}
+
+
+#graph .axis-graph .base{
+    background-color: #cccccc;
+    width: 80px;
+    border-radius: 4px;
+    margin: 0;
+    height: available;
+    height: -webkit-fill-available;
+    height: -moz-fill-available;
+}
+
+#graph .axis-graph .base div:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+
+#graph .axis-graph .base div:last-child{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#graph .axis-graph .base .worn{
+    background-color: #5cb85c;
+}
+
+
+#graph .axis-graph .base .none{
+    background-color: #f0ad4e;
+}
+
+#graph .axis-graph .line{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: -480px;
+    height: 480px;
+}
+
+#graph .axis-graph .line div{
+    border-bottom: 1px transparent dotted;
+}
+
+#graph .axis-graph .line .th1{
+    border-color: #e8e8e8;
+}
+#graph .axis-graph .line .th2{
+    border-color: #aaaaaa;
+}
+#graph .axis-note {
+    padding: 8px 0;
+    height: inherit;
+}
+#graph .axis-note .base .note{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#graph .axis-note .base .note span{
+    color: #31708f;
+    border-radius: 8px;
+    background-color: #d9edf7;
+    height: 32px;
+    min-width: 64px;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#graph .axis-note .base .note span:hover{
+    color: #e8e8e8;
+    background-color: #31708f;
+}
+
+#graph .axis-note .note-detail{
+    display: flex;
+    background-color: rgba(0,0,0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow-y: hidden; */
+    /* overflow: hidden; */
+    z-index: 100;
+    justify-content: center;
+    /* align-content: center; */
+}
+
+#graph .axis-note .note-detail.disabled{
+    display: none;
+}
+
+#graph .axis-note .note-detail .body{
+    position: relative;
+    width: 360px;
+    height: max-content;
+    margin-top: 10%;
+    webkit-box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+    z-index: 101;
+    background-color: #fff;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+#graph .axis-note .note-detail .body.disabled{
+    transform: scale(0);
+}
+
+#graph .axis-note .note-detail .body .header{
+    height: 48px;
+    padding: 15px 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #e8e8e8;
+}
+
+#graph .axis-note .note-detail .body .contents{
+    padding: 0;
+}
+#graph .axis-note .note-detail .body .contents .note {
+    padding: 0;
+    margin: 0;
+}
+
+#note-detail-input{
+    /* Lib上書き */
+    border: 1px solid #e8e8e8 !important;
+    padding: 16px !important;
+    margin: 0px !important;
+}
+
+#note-detail-input:focus{
+    /* Lib上書き */
+    box-shadow: none !important;
+    border: 1px #26a69a solid !important;
+}
+
+#graph .axis-note .note-detail .body .footer{
+    height: 56px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 8px;
+}
+#graph .axis-note .note-detail .body .footer button{
+    margin: 0 8px;
+}

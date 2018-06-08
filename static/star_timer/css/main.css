@@ -1,0 +1,149 @@
+
+.timer-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.current-data{
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ステータスブロック */
+.status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+}
+
+.status .title{
+    border-left: 4px #ff8a80 solid;
+    padding-left: 4px;
+    margin-right: 16px;
+}
+
+.label-status{
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.label-status.true{
+    background-color: #5cb85c;
+}
+
+.label-status.false{
+    background-color: #f0ad4e;
+}
+
+/* 差分・タイマーブロック */
+.delta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+}
+
+.delta .title{
+    border-left: 4px #ff80ab solid;
+    padding-left: 4px;
+    margin-right: 16px;
+}
+
+.delta .time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+
+/* 累計ブロック */
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 16px;
+}
+
+.total .title{
+    margin-bottom: 8px;
+    border-left: 4px #ea80fc solid;
+    padding-left: 4px;
+    margin-right: 16px;
+}
+
+.total .worn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    /* margin-bottom: 0px; */
+}
+.total .worn .total-status{
+    margin-top: -8px;
+}
+.total .none{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    /* margin-bottom: 8px; */
+}
+.total .none .total-status{
+    margin-top: -8px;
+}
+
+.total div div .label{ /* ステータスラベル */
+    line-height: 0;
+    margin-right: 8px;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    /* margin-top: 35px; */
+}
+
+/* メモエリア */
+.timer-status .note{
+    /*Lib上書き*/
+    margin: 24px 16px -8px 16px !important;
+}
+.note-textarea{
+    /*Lib上書き*/
+    border: 1px #e8e8e8 solid !important;
+    padding: 10px 8px !important;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)  !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)  !important;
+}
+.note-textarea:focus{
+    /*Lib上書き*/
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)  !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)  !important;
+    border-bottom: none !important;
+    border: 1px #26a69a solid !important;
+}
+.note-label.active{
+    /*Lib上書き*/
+    top: -4px !important;
+}
+
+/* ボタンブロック */
+.buttons{
+    margin: 16px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-change{
+    margin: 0px 8px;
+}

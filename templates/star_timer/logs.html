@@ -1,0 +1,214 @@
+{% extends "star_timer/base.html" %}
+{% load i18n static %}
+
+{% block title %}履歴{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'star_timer/css/logs.css' %}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+    {% csrf_token %}
+    <div class="tools">
+        <div class="change-view">
+             <i class="medium material-icons">access_time</i>
+        </div>
+        <div class="reload">
+            <i class="medium material-icons">refresh</i>
+        </div>
+    </div>
+
+    <div class="display-pattern row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col"><a class="active"  href="#list">リスト</a></li>
+                <li class="tab col"><a href="#statistic">統計</a></li>
+                <li class="tab col"><a href="#graph">グラフ</a></li>
+            </ul>
+        </div>
+        <!-- リスト形式 -->
+        <div id="list" class="col contents s12">
+            <div class="list-info">直近20件を表示しています</div>
+            <div class="log-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>時間</th>
+                            <th>状態</th>
+                            <th>メモ</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+{#                        <tr>#}
+{#                            <td>2018/06/01 18:00:00</td>#}
+{#                            <td>#}
+{#                                <span class="label label-success">装着</span>#}
+{#                                <span>→</span>#}
+{#                                <span class="label label-warning">休憩</span>#}
+{#                            </td>#}
+{#                            <td>お風呂</td>#}
+{#                        </tr>#}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- 統計形式 -->
+        <div id="statistic" class="col contents s12">
+            <div class="average">
+                <div class="title">
+                    <i class="material-icons">equalizer</i>
+                    <span>１日平均</span>
+                </div>
+                <div class="worn">
+                    <div><span class="label label-success">装着</span></div>
+                    <div class="delta-hours">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="delta-minutes">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="delta-seconds">00</div>
+                </div>
+                <div class="none">
+                    <div><span class="label label-warning">休憩</span></div>
+                    <div class="delta-hours">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="delta-minutes">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="delta-seconds">00</div>
+                </div>
+            </div>
+        </div>
+        <!-- グラフ形式 -->
+        <div id="graph" class="col contents s12">
+            <div class="date-picker">
+                <div class="btn-before cyan darken-3 waves-effect waves-light btn">
+                    <i class="material-icons">chevron_left</i>
+                    <div>前日</div>
+                </div>
+                <div class="label-date">
+                    <span class="target-date" date="2018-06-06T00:00:00+09:00">2018年6月6日(水)</span>
+                    <div class="total">
+                        <div class="worn">
+                            <div><span class="label label-success">装着</span></div>
+                            <div class="total-hours timer">00</div>
+                            <div class="timer-separater timer">:</div>
+                            <div class="total-minutes timer">00</div>
+                            <div class="timer-separater timer">:</div>
+                            <div class="total-seconds timer">00</div>
+                        </div>
+                        <div class="none">
+                            <div><span class="label label-warning">休憩</span></div>
+                            <div class="total-hours timer">00</div>
+                            <div class="timer-separater timer">:</div>
+                            <div class="total-minutes timer">00</div>
+                            <div class="timer-separater timer">:</div>
+                            <div class="total-seconds timer">00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-next teal darken-3 waves-effect waves-light btn">
+                    <div>翌日</div>
+                    <i class="material-icons">chevron_right</i>
+                </div>
+            </div>
+
+            <div class="graph-contents">
+                <div class="axis-time">
+                    <div class="th0"> 0:00</div>
+                    <div class="th2"> 1:00</div>
+                    <div class="th2"> 2:00</div>
+                    <div class="th1"> 3:00</div>
+                    <div class="th2"> 4:00</div>
+                    <div class="th2"> 5:00</div>
+                    <div class="th1"> 6:00</div>
+                    <div class="th2"> 7:00</div>
+                    <div class="th2"> 8:00</div>
+                    <div class="th1"> 9:00</div>
+                    <div class="th2">10:00</div>
+                    <div class="th2">11:00</div>
+                    <div class="th1">12:00</div>
+                    <div class="th2">13:00</div>
+                    <div class="th2">14:00</div>
+                    <div class="th1">15:00</div>
+                    <div class="th2">16:00</div>
+                    <div class="th2">17:00</div>
+                    <div class="th1">18:00</div>
+                    <div class="th2">19:00</div>
+                    <div class="th2">20:00</div>
+                    <div class="th1">21:00</div>
+                    <div class="th2">22:00</div>
+                    <div class="th2">23:00</div>
+                    <div class="th1">24:00</div>
+                </div>
+                <div class="axis-graph">
+                    <div class="cover"></div>
+                    <div class="base">
+{#                        <div class="worn" style="height:130px"></div>#}
+{#                        <div class="none" style="height:10px"></div>#}
+{#                        <div class="worn" style="height:90px"></div>#}
+{#                        <div class="none" style="height:10px"></div>#}
+{#                        <div class="worn" style="height:30px"></div>#}
+                    </div>
+                    <div class="line">
+                        <div class="th0"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                        <div class="th2"></div>
+                        <div class="th2"></div>
+                        <div class="th1"></div>
+                    </div>
+                </div>
+                <div class="axis-note">
+                    <div class="base">
+{#                        <div class="note" style="height:130px" data-val="4"><span>Manual</span></div>#}
+{#                        <div class="note" style="height:10px" data-val="3"><span>Manual</span></div>#}
+{#                        <div class="note" style="height:90px" data-val="2"><span>Manual</span></div>#}
+{#                        <div class="note" style="height:10px" data-val="1"><span>Manual</span></div>#}
+{#                        <div class="note" style="height:30px" data-val="0"><span>Manual</span></div>#}
+                    </div>
+                    <div class="note-detail disabled" data-val="0">
+                        <div class="body disabled">
+                            <div class="contents">
+                                <div class="note input-field col s12">
+                                    <textarea placeholder="めも" id="note-detail-input" class="materialize-textarea"></textarea>
+{#                                  <label for="note-detail-input">Textarea</label>#}
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-close grey darken-1">とじる</button>
+                                <button class="btn btn-save orange darken-2 disabled">ほぞん</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'star_timer/js/logs.js' %}"></script>
+{% endblock extra_js %}

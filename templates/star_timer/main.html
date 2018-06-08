@@ -1,0 +1,77 @@
+{% extends "star_timer/base.html" %}
+{% load i18n static %}
+
+{% block title %}タイマー{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'star_timer/css/main.css' %}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+    {% csrf_token %}
+    <div class="tools">
+        <div class="change-view">
+             <i class="medium material-icons">subject</i>
+        </div>
+        <div class="reload">
+            <i class="medium material-icons">refresh</i>
+        </div>
+    </div>
+
+    <div class="timer-status">
+        <div class="status">
+            <div class="title">現在の状態</div>
+            <div class="label-status true">装着中</div>
+        </div>
+        <div class="delta">
+            <div class="title">経過時間</div>
+            <div class="time">
+                <div class="delta-hours">00</div>
+                <div class="timer-separater">:</div>
+                <div class="delta-minutes">00</div>
+                <div class="timer-separater">:</div>
+                <div class="delta-seconds">00</div>
+            </div>
+        </div>
+        <div class="total">
+            <div class="title">本日累計</div>
+            <div>
+                <div class="worn">
+                    <div class="total-status">
+                        <span class="label label-success">装着</span>
+                    </div>
+                    <div class="total-hours">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="total-minutes">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="total-seconds">00</div>
+                </div>
+                <div class="none">
+                    <div class="total-status">
+                        <span class="label label-warning">休憩</span>
+                    </div>
+                    <div class="total-hours">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="total-minutes">00</div>
+                    <div class="timer-separater">:</div>
+                    <div class="total-seconds">00</div>
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s12 note">
+            <textarea id="timer-record-note" class="materialize-textarea note-textarea"></textarea>
+            <label for="timer-record-note" class="note-label">めも</label>
+        </div>
+        <div class="buttons">
+            <div class="btn-change worn waves-effect waves-light btn-large disabled">装着したよ</div>
+            <div class="btn-change none waves-effect pink accent-1 waves-light btn-large">休憩だよ</div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'star_timer/js/main.js' %}"></script>
+{% endblock extra_js %}
