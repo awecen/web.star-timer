@@ -545,6 +545,7 @@ let Logs = {
         $('.note-detail').removeClass('disabled');
         $('.note-detail').attr('data-val', dataVal);
         $('#graph .axis-note .note-detail .body').removeClass('disabled');
+         M.textareaAutoResize($('#note-detail-input'));
         // setTimeout(function(){
         //     $('#note-detail-input').focus()
         // }, 100);
