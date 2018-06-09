@@ -537,19 +537,17 @@ let Logs = {
         let targetDate = new Date($('#graph .date-picker .label-date span').attr('date'));
         let note = "";
         Logs.dailyRecordsByDailyGraph.forEach(function(log){
-           if(Tools.compareDate(new Date(log[0].start_time), targetDate)){
+            if(Tools.compareDate(new Date(log[0].start_time), targetDate)){
                note = log[dataVal].note;
-           }
+}
         });
+        
+        $('.btn-save').addClass('disabled');
         $('#note-detail-input').val(note);
         $('.note-detail').removeClass('disabled');
         $('.note-detail').attr('data-val', dataVal);
         $('#graph .axis-note .note-detail .body').removeClass('disabled');
-         M.textareaAutoResize($('#note-detail-input'));
-        // setTimeout(function(){
-        //     $('#note-detail-input').focus()
-        // }, 100);
-        // $('#note-detail-input').blur();
+        M.textareaAutoResize($('#note-detail-input'));
     },
 
     // メモ詳細ダイアログ非表示
