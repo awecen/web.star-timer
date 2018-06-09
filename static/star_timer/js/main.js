@@ -270,9 +270,10 @@ let Main = {
 
     // メモ反映
     setNote: function(note){
-      $('#timer-record-note').focus();
-      $('#timer-record-note').val(note);
-      $('#timer-record-note').blur();
+        $('#timer-record-note').focus();
+        $('#timer-record-note').val(note);
+        $('#timer-record-note').blur();
+        M.textareaAutoResize($('#timer-record-note'));
     },
 
     // メモのみ保存API
