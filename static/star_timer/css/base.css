@@ -5,6 +5,7 @@
 
 html{
     overflow-y: scroll; /*スクロールバーを常に表示*/
+    font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 /* container */
 .container{
@@ -20,7 +21,16 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 8px 0;
 }
+
+.tools .tool-item .title{
+    margin-top: 8px;
+    font-size: 9px;
+    text-align: center;
+}
+
 .tools .change-view{
     padding: 16px 16px 12px 16px;
     cursor: pointer;
@@ -28,6 +38,15 @@ html{
 }
 .tools .change-view:hover{
     background-color: #e8e8e8;
+}
+.tools .add-record{
+    padding: 16px 16px 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #fce4ec;
+}
+.tools .add-record:hover{
+    background-color: #f48fb1;
 }
 .tools .reload{
     padding: 16px 16px 12px 16px;
