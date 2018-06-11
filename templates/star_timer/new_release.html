@@ -1,0 +1,89 @@
+{% extends "star_timer/base.html" %}
+{% load i18n static %}
+
+{% block title %}わっつにゅう{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'star_timer/css/new_release.css' %}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+    {% csrf_token %}
+    <div class="tools">
+        <div class="tool-row">
+            <div class="tool-item">
+                <div class="tool-icon back">
+                     <i class="medium material-icons">arrow_back</i>
+                </div>
+                <div class="title">もどる</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-release-body">
+        <div class="new-release-row">
+            <div class="title">2.2.0</div>
+            <div class="features">
+                <div class="feature-item">「わっつにゅう」ページの追加</div>
+                <div class="feature-item">ツールボタンエリアの開閉機能追加</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">2.1.1</div>
+            <div class="features">
+                <div class="feature-item">ログ画面を開いた時に最初から選択しているタブを「リスト」から「グラフ」へ変更</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">2.1.0</div>
+            <div class="features">
+                <div class="feature-item">トップ画面に「あとからついか」機能の追加</div>
+                <div class="feature-item">各操作ボタンの文言をひらがな体へ変更(きまぐれ)</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">2.0.2</div>
+            <div class="features">
+                <div class="feature-item">「めも」保存ボタンの挙動バグを修正</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">2.0.1</div>
+            <div class="features">
+                <div class="feature-item">「めも」入力欄の高さバグを修正</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">2.0.0</div>
+            <div class="features">
+                <div class="feature-item">トップ画面のデザインを変更</div>
+                <div class="feature-item">「めも」機能を追加</div>
+                <div class="feature-item">内部データ構造の変更(点から期間)</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">1.1.1</div>
+            <div class="features">
+                <div class="feature-item">グラフ表示時のアニメーション追加</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">1.1.0</div>
+            <div class="features">
+                <div class="feature-item">ログ画面にグラフ機能を追加</div>
+            </div>
+        </div>
+        <div class="new-release-row">
+            <div class="title">1.0.0</div>
+            <div class="features">
+                <div class="feature-item">公開＆運用開始</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'star_timer/js/new_release.js' %}"></script>
+{% endblock extra_js %}

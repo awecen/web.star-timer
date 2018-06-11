@@ -21,12 +21,7 @@ let Logs = {
 
     // 各種イベント付加
     attachEvents: function () {
-        $(document).on('click', '.reload', function(){
-            location.reload(true);
-        });
-        $(document).on('click', '.change-view', function(){
-           location.href = 'http://127.0.0.1:8000/star_timer/';
-        });
+
         // [グラフ] メモ
         $(document).on('click', '#graph .axis-note .base .note span', function(e){
             Logs.showNoteDetail($(e.currentTarget).parent().attr('data-val'));
