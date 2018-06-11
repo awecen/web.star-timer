@@ -488,7 +488,7 @@ let Logs = {
         }
 
         $('#graph .graph-contents .axis-graph .cover').animate({
-            'top': '800px',
+            'top': '840px',
             'height': '0px',
         }, 750, '', function(){
             $('#graph .graph-contents .axis-graph .cover').removeClass('covered');

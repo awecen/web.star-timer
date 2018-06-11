@@ -137,14 +137,14 @@
     border-radius: 2px;
     margin: 0;
     position: absolute;
-    top: 796px;
+    top: 838px;
     height: 0px;
 }
 #graph .axis-graph .cover.covered{
     /*top: 316px;*/
     /*height: 480px;*/
-    top:320px;
-    height: 480px;
+    top: 359px;
+    height: 481px;
 }
 
 
