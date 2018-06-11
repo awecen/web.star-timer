@@ -556,7 +556,7 @@ let Logs = {
         $('#graph .axis-note .note-detail .body').addClass('disabled');
     },
 
-    // メモ保存
+    // メモ保存 APIs
     saveNote: function(){
         // 表示中の日付を取得
         let targetDate = new Date($('#graph .date-picker .label-date span').attr('date'));

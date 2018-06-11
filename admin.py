@@ -15,6 +15,7 @@ admin.site.register(SwitchLog, SwtichLogAdmin)
 class TimerRecordAdmin(admin.ModelAdmin):
     list_display = ('id', 'start_time', 'end_time', 'is_worn', 'note')
     list_display_links = ('id', )
+    ordering = ('-start_time', )
 
 
 admin.site.register(TimerRecord, TimerRecordAdmin)

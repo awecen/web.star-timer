@@ -11,21 +11,89 @@
 {% block content %}
     {% csrf_token %}
     <div class="tools">
-        <div class="change-view">
-             <i class="medium material-icons">subject</i>
+        <div class="tool-item">
+            <div class="change-view">
+                 <i class="medium material-icons">subject</i>
+            </div>
+            <div class="title">かこのきろく</div>
         </div>
-        <div class="reload">
-            <i class="medium material-icons">refresh</i>
+        <div class="tool-item">
+            <div class="add-record">
+                 <i class="medium material-icons">add</i>
+            </div>
+            <div class="title">あとからついか</div>
+        </div>
+        <div class="tool-item">
+            <div class="reload">
+                 <i class="medium material-icons">refresh</i>
+            </div>
+            <div class="title">さいよみこみ</div>
+        </div>
+    </div>
+
+    <div class="adding-form invisible">
+        <div class="body">
+            <div class="header">あとからついか</div>
+            <div class="contents">
+                <div class="item-row switch">
+                    <div class="item-name status">
+                        <span>すてーたす</span>
+                        <span class="required-icon">＊</span>
+                    </div>
+                    <div class="item-input switch">
+                        <label>
+                            きゅうけい
+                            <input id="adding-form-is-worn" type="checkbox">
+                            <span class="lever"></span>
+                            そうちゃく
+                        </label>
+                    </div>
+                </div>
+                <div class="item-row datetime-picker">
+                    <div class="item-name start">
+                        <span>かいしじかん</span>
+                        <span class="required-icon">＊</span>
+                    </div>
+                    <div class="datetime-input-items">
+                        <div class="item-input">
+                            <input id="adding-form-start-datetime" class="flatpickr flatpickr-input" type="text" placeholder="Select Date.." data-id="datetime" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="item-row datetime-picker">
+                    <div class="item-name end">
+                        <span>しゅうりょうじかん</span>
+                    </div>
+                    <div class="datetime-input-items">
+                        <div class="datetime-input-items">
+                            <div class="item-input">
+                                <input id="adding-form-end-datetime" class="flatpickr flatpickr-input" type="text" placeholder="Select Date.." data-id="datetime" readonly="readonly">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="item-name note">めも</div>
+                    <div class="item-input">
+                        <textarea id="adding-form-note" class="materialize-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="btn btn-cancel grey darken-1">きゃんせる</div>
+                <div class="btn btn-save orange darken-2">ほぞん</div>
+            </div>
+
         </div>
     </div>
 
     <div class="timer-status">
         <div class="status">
-            <div class="title">現在の状態</div>
+            <div class="title">いまのじょうたい</div>
             <div class="label-status true">装着中</div>
         </div>
         <div class="delta">
-            <div class="title">経過時間</div>
+            <div class="title">けいかじかん</div>
             <div class="time">
                 <div class="delta-hours">00</div>
                 <div class="timer-separater">:</div>
@@ -35,7 +103,7 @@
             </div>
         </div>
         <div class="total">
-            <div class="title">本日累計</div>
+            <div class="title">きょうのとーたる</div>
             <div>
                 <div class="worn">
                     <div class="total-status">
@@ -64,8 +132,8 @@
             <label for="timer-record-note" class="note-label">めも</label>
         </div>
         <div class="buttons">
-            <div class="btn-change worn waves-effect waves-light btn-large disabled">装着したよ</div>
-            <div class="btn-change none waves-effect pink accent-1 waves-light btn-large">休憩だよ</div>
+            <div class="btn-change worn waves-effect waves-light btn-large disabled">そうちゃく！</div>
+            <div class="btn-change none waves-effect pink accent-1 waves-light btn-large">きゅうけい</div>
         </div>
     </div>
 
