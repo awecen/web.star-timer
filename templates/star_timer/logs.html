@@ -1,7 +1,7 @@
 {% extends "star_timer/base.html" %}
 {% load i18n static %}
 
-{% block title %}履歴{% endblock title %}
+{% block title %}ろぐ{% endblock title %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'star_timer/css/logs.css' %}">
@@ -11,18 +11,20 @@
 {% block content %}
     {% csrf_token %}
     <div class="tools">
-        <div class="tool-item">
-            <div class="change-view">
-                 <i class="medium material-icons">access_time</i>
+        <div class="tool-row">
+            <div class="tool-item">
+                <div class="tool-icon back">
+                     <i class="medium material-icons">arrow_back</i>
+                </div>
+                <div class="title">もどる</div>
             </div>
-            <div class="title">たいまー</div>
         </div>
-        <div class="tool-item">
-            <div class="reload">
-                 <i class="medium material-icons">refresh</i>
-            </div>
-            <div class="title">さいよみこみ</div>
-        </div>
+{#        <div class="tool-item">#}
+{#            <div class="reload">#}
+{#                 <i class="medium material-icons">refresh</i>#}
+{#            </div>#}
+{#            <div class="title">さいよみこみ</div>#}
+{#        </div>#}
     </div>
 
     <div class="display-pattern row">

@@ -1,7 +1,7 @@
 {% extends "star_timer/base.html" %}
 {% load i18n static %}
 
-{% block title %}タイマー{% endblock title %}
+{% block title %}たいまー{% endblock title %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'star_timer/css/main.css' %}">
@@ -11,23 +11,50 @@
 {% block content %}
     {% csrf_token %}
     <div class="tools">
-        <div class="tool-item">
-            <div class="change-view">
-                 <i class="medium material-icons">subject</i>
+        <div class="tool-row">
+            <div class="tool-item">
+                <div class="tool-icon logs">
+                     <i class="medium material-icons">subject</i>
+                </div>
+                <div class="title">かこのきろく</div>
             </div>
-            <div class="title">かこのきろく</div>
+            <div class="tool-item">
+                <div class="tool-icon add-record">
+                     <i class="medium material-icons">add</i>
+                </div>
+                <div class="title">あとからついか</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon reload">
+                     <i class="medium material-icons">refresh</i>
+                </div>
+                <div class="title">さいよみこみ</div>
+            </div>
         </div>
-        <div class="tool-item">
-            <div class="add-record">
-                 <i class="medium material-icons">add</i>
+        <div class="tool-row">
+            <div class="tool-item">
+                <div class="tool-icon new-release">
+                     <i class="medium material-icons">new_releases</i>
+                </div>
+                <div class="title">わっつにゅう</div>
             </div>
-            <div class="title">あとからついか</div>
+            <div class="tool-item under-construction">
+                <div class="tool-icon print ">
+                     <i class="medium material-icons">print</i>
+                </div>
+                <div class="title">いんさつ</div>
+            </div>
+            <div class="tool-item under-construction">
+                <div class="tool-icon settings under-construction">
+                     <i class="medium material-icons">settings</i>
+                </div>
+                <div class="title">せってい</div>
+            </div>
         </div>
-        <div class="tool-item">
-            <div class="reload">
-                 <i class="medium material-icons">refresh</i>
-            </div>
-            <div class="title">さいよみこみ</div>
+    </div>
+    <div class="tools-lever">
+        <div class="btn-lever">
+            <i class="small material-icons">expand_more</i>
         </div>
     </div>
 

@@ -16,46 +16,91 @@ html{
 }
 
 /* ツールブロック */
-.tools {
-    margin: 16px;
+.tools{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     border-bottom: 1px #e8e8e8 solid;
-    padding: 8px 0;
 }
 
-.tools .tool-item .title{
+.tools-lever{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-lever{
+    /* 開閉ボタン */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #f0f0f0;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-lever:hover{
+    background-color: #e8e8e8;
+}
+
+.tools .tool-row{
+    margin: 0 16px;
+    display: none;
+    justify-content: space-between;
+    padding: 0;
+    height: 0px;
+}
+
+.tools .tool-row:first-child{
+    height: 128px;
+    display: flex;
+    margin: 8px 16px 0 16px;
+    padding: 8px 0 0 0;
+}
+
+
+.tool-item .title{
+    /* ツールボタン キャプション 基本 */
     margin-top: 8px;
     font-size: 9px;
     text-align: center;
 }
 
-.tools .change-view{
+.tool-item .tool-icon{
+    /* ツールボタン アイコン 基本 */
     padding: 16px 16px 12px 16px;
     cursor: pointer;
     border-radius: 50%;
+
 }
-.tools .change-view:hover{
+
+.tool-item .tool-icon:hover{
+    /* ツールボタン アイコン 基本 */
     background-color: #e8e8e8;
 }
-.tools .add-record{
-    padding: 16px 16px 12px 16px;
-    cursor: pointer;
-    border-radius: 50%;
+
+.tool-item.under-construction .tool-icon{
+    /* ツールボタン アイコン 工事中 */
+    color: #999999;
+    cursor: initial;
+}
+
+.tool-item.under-construction .tool-icon:hover{
+    /* ツールボタン アイコン 工事中 */
+    background-color: initial;
+}
+
+.tool-item.under-construction .title{
+    text-decoration: line-through;
+}
+
+.tool-item .add-record{
+    /* あとからついか */
     background-color: #fce4ec;
 }
-.tools .add-record:hover{
+.tool-item .add-record:hover{
+    /* あとからついか */
     background-color: #f48fb1;
 }
-.tools .reload{
-    padding: 16px 16px 12px 16px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.tools .reload:hover{
-    background-color: #e8e8e8;
-}
+
 
 /*署名*/
 .signature{

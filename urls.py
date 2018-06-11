@@ -14,6 +14,7 @@ urlpatterns = [
     # 書籍一覧表示のURL : (/)
     path('', views.MainView.as_view(), name='main'),
     path('logs/', views.LogsView.as_view(), name='main'),
+    path('new_release/', views.NewReleaseView.as_view(), name='main'),
 
     # API
     # path('latest/', apis.SwitchLogDetail.as_view()),

@@ -1,0 +1,29 @@
+.new-release-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.new-release-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.new-release-row .title{
+    border-left: 3px #ce93d8 solid;
+    padding: 0 8px;
+    font-size: 16px;
+    margin: 16px 8px 8px 8px;
+    font-weight: bold;
+}
+
+.feature-item{
+    margin: 8px;
+    font-size: 12px;
+}
+.feature-item::before {
+    content: "◆ ";
+    font-style: 8px;
+}

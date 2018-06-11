@@ -63,16 +63,6 @@ let Main = {
             Main.setNewTimerRecord();
         });
 
-        // 画面更新ボタンを押したとき
-        $(document).on('click', '.reload', function(){
-            location.reload(true);
-        });
-
-        // 履歴とかのページ移動ボタンを押したとき
-        $(document).on('click', '.change-view', function(){
-           location.href = 'http://127.0.0.1:8000/star_timer/logs/';
-        });
-
         // メモのフォーカスが外れたとき、自動保存
         $(document).on('focusout', '#timer-record-note', function(){
             Main.saveNote();
