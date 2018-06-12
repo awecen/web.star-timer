@@ -25,10 +25,26 @@
 #statistic .average div{
     display: flex;
 }
+
 #statistic .average .title{
     border-bottom: 1px #cccccc solid;
     margin: 8px 0;
+    display: flex;
 }
+
+#statistic .average .title .char{
+    margin-top: 2px;
+    margin-left: 4px;
+}
+
+#statistic .average .title .target-duration{
+    margin-top: 5px;
+    margin-left: 8px;
+    color: #aaaaaa;
+    font-weight: bold;
+    font-size: 12px;
+}
+
 #statistic .average div .label{
     line-height: 0;
     margin-right: 8px;
