@@ -306,6 +306,13 @@ let Logs = {
         $('#statistic .average .none .delta-minutes').text(Tools.padZero(none_average.deltaMinutes));
         $('#statistic .average .none .delta-seconds').text(Tools.padZero(none_average.deltaSeconds));
 
+        // 計算期間
+        let start_date = Logs.dailyRecords[Logs.dailyRecords.length - 1].date;
+        let end_date = Logs.dailyRecords[1].date;
+        let start_date_char = start_date.getFullYear() + '/' + Tools.padZero(start_date.getMonth() + 1) + '/' + Tools.padZero(start_date.getDate());
+        let end_date_char = end_date.getFullYear() + '/' + Tools.padZero(end_date.getMonth() + 1) + '/' + Tools.padZero(end_date.getDate());
+        $('#statistic .average .title .target-duration .start-date').text(start_date_char);
+        $('#statistic .average .title .target-duration .end-date').text(end_date_char);
     },
 
     // newerとolderの差分取得
